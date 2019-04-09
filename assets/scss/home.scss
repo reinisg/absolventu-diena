@@ -1,0 +1,116 @@
+.home {
+  &__why {
+    padding: 40px 0 24px;
+
+    &-main {
+      margin-top: 20px;
+    }
+
+    &-list {
+      margin-top: 16px;
+
+      .home__why-frame {
+        margin-bottom: 10px;
+        padding-bottom: 23%;
+        width: 47%;
+        width: calc(50% - 5px);
+        display: inline-block;
+        float: left;
+
+        &:nth-of-type(odd) {
+          margin-right: 5px;
+        }
+
+        &:nth-of-type(even) {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  &__activities {
+    margin-top: 24px;
+  }
+
+  &__donation {
+    margin-top: 64px;
+  }
+
+  &__review {
+    padding: 24px 0 36px;
+
+    &-btn {
+      text-align: center;
+    }
+
+    &-title {
+      margin-top: 28px;
+    }
+
+    &-video {
+      margin-top: 8px;
+    }
+  }
+
+  @media (--tablet) {
+    &__why {
+      &-list {
+        .home__why-frame {
+          padding-bottom: 10%;
+          width: 22%;
+          width: calc(25% - 24px);
+
+          &:nth-of-type(odd),
+          &:nth-of-type(even) {
+            margin: 0 32px 0 0;
+          }
+
+          &:last-of-type {
+            margin: 0;
+          }
+        }
+      }
+
+      &-more {
+        margin-top: 16px;
+      }
+    }
+
+    &__activities {
+      margin-top: 40px;
+    }
+
+    &__review {
+      padding: 40px 0 66px;
+
+      &-title {
+        margin-top: 56px;
+      }
+
+      &-video {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  @media (--laptop) {
+    &__why {
+      padding: 88px 0 80px;
+
+      &-main,
+      &-list {
+        margin-top: 32px;
+      }
+    }
+
+    &__donation {
+      margin-top: 100px;
+    }
+
+    &__review {
+      &-title {
+        margin-top: 80px;
+      }
+    }
+  }
+}

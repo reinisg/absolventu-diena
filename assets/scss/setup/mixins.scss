@@ -1,0 +1,66 @@
+$max-width: 1000px;
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin outer-container ($local-max-width) {
+  @include clearfix;
+  width: $local-max-width;
+  margin: 0 auto;
+}
+
+@mixin container {
+  @include outer-container (94%);
+  transition: width .2s ease-in-out;
+
+  @media (--mobileL){
+    @include outer-container (96%);
+  }
+
+  @media (--tablet){
+    @include outer-container (96%);
+  }
+
+  @media (--laptop){
+    @include outer-container ($max-width);
+  }
+}
+
+@mixin outer-container ($local-default-width) {
+  @include clearfix;
+  width: $local-default-width;
+  margin: 0 auto;
+}
+
+
+@mixin browser-placeholder($color) {
+  &::-webkit-input-placeholder { color:$color; }
+  &:-moz-placeholder { color:$color; } /* FF 4-18 */
+  &::-moz-placeholder { color:$color; } /* FF 19+ */
+  &:-ms-input-placeholder { color:$color; } /* IE 10+ */
+}
+
+@mixin primary-gradient-bg() {
+  background: linear-gradient(to right, rgba(41,35,92,1) 0%,rgba(0,171,168,1) 100%);
+}
+
+@mixin link-color($color) {
+  color: $color;
+
+  &:before,
+  &:after {
+    background-color: $color;
+  }
+
+  .button__arrow {
+    &:before,
+    &:after {
+      background-color: $color;
+    }
+  }
+}

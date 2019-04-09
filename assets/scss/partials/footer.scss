@@ -1,0 +1,141 @@
+.footer {
+   background-color: $color-ocean;
+
+  &__content {
+    padding: 24px 0;
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-weight: 700;
+  }
+
+  &__org {
+    margin-top: 8px;
+    color: $color-white;
+    font-size: 16px;
+    line-height: 24px;
+
+    strong {
+      display: block;
+      font-weight: 700;
+    }
+  }
+
+  &__contacts {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    color: $color-white;
+    font-size: 16px;
+    line-height: 24px;
+
+    svg {
+      position: relative;
+      top: 4px;
+      margin-right: 16px;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+
+      path {
+        transition: fill 0.2s ease-out;
+      }
+    }
+
+    span {
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease-out;
+    }
+
+    & + .footer__link {
+      margin-top: 16px;
+    }
+
+    &:hover {
+      svg path {
+        fill: $color-silver;
+      }
+
+      span {
+        border-color: $color-white;
+      }
+    }
+  }
+
+  @media (--tablet) {
+    &:before {
+      position: relative;
+      width: 100%;
+      height: 32px;
+      display: block;
+      background-image: url("assets/img/svg/line-white.svg");
+      content: "";
+    }
+
+    &__content {
+      padding: 40px 0;
+    }
+
+    &__main {
+      display: flex;
+    }
+
+    &__contacts {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__org {
+      margin-top: 4px;
+      margin-left: 40px;
+      font-size: 20px;
+    }
+
+    &__link {
+      font-size: 20px;
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      & + .footer__link {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media (--laptop) {
+    &__content {
+      lost-column: 12/12;
+      padding: 60px 0;
+    }
+
+    &__main,
+    &__contacts {
+      lost-column: 6/12;
+    }
+
+    &__contacts {
+      margin-top: 0;
+      justify-content: inherit;
+    }
+
+    &__link {
+      margin-right: 60px;
+      padding-left: 48px;
+
+      &:first-of-type {
+        margin-top: 4px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
